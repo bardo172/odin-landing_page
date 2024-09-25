@@ -50,8 +50,57 @@ body {
 
 
 
+.container-call_to_action {
+  background-color: #676E97; /* Sets the background color to blue */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  
+}
+
+.container-contact {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+
+}
+
+
+.contact {
+  display: flex;                  /* Use Flexbox */
+  align-items: center;           /* Center items vertically */
+  text-decoration: none;         /* Optional: Remove underline from link */
+  padding: 10px 25px;
+}
+
+.contact-icon {
+  margin-right: 5px;           /* Space between icon and text */
+  max-height: 50px; /* Adjust social media icon size */
+}
+
+.header-text {
+  font-size: 24px;
+  font-weight: bold;
+  padding: 15px 15px 5px 15px;
+  color: #ED9B33;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Shadow */
+}
+
+.secondary-text {
+  font-size: 16px;
+  padding: 10px 48px;
+  color: #001E60;
+
+}
+
+
+
+
+
 .footer {
-  height: 108px;
+  height: 115px;
   background: #001E60;
   color: #ED9B33;
   display: flex;
@@ -72,8 +121,7 @@ element.style {
   flex-direction: column;
   flex: 1;
 
-
-  padding: 48px;
+  /* padding: 48px; */
   gap: 32px;
 }
 
