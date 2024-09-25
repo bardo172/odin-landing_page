@@ -1,43 +1,84 @@
 body {
   font-family: 'Roboto', sans-serif;
-
   margin: 0;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: stretch;
+  padding-top: 90px; /* Same height as the header */
 }
 
 .header {
-  height: 72px;
-  background: #1F2937;
+  height: 90px;
+  background: #001E60;
   color: white;
   display: flex;
-  font-size: 32px;
-  font-weight: 900;
-  padding: 0 16px;
-  align-items: center;
+  align-items: center; /* Vertically center items */
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Ensures it stays above other content */
 }
 
-.footer {
-  height: 72px;
-  background: #1F2937;
-  color: white;
+.header-logo {
+  list-style-type: none; /* Remove bullet points from ul */
+  margin: 0;
+  padding-left: 15px;
+}
+
+.logo-image {
+  /* max-width: 90px; */
+  max-height: 90px;
+}
+
+.social-media {
   display: flex;
+  gap: 0px; /* Space between social media icons */
+}
+
+.social img.icon {
+  max-height: 35px; /* Adjust social media icon size */
+  transition: transform 0.3s ease; /* Optional hover effect */
+  padding-right: 15px;
+}
+
+.social img.icon:hover {
+  transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+
+
+.footer {
+  height: 108px;
+  background: #001E60;
+  color: #ED9B33;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
+element.style {
+  margin-top: 8px;
+  margin-bottom: 0px;
+}
+
+
+
 #main-container {
   display: flex;
+  flex-direction: column;
   flex: 1;
+
+
+  padding: 48px;
+  gap: 32px;
 }
 
 .container {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 48px;
-  gap: 32px;
+
 }
 
 .container-quotes {
@@ -65,7 +106,6 @@ body {
 
 ul {
   display: flex;
-  flex-direction: column;
   padding: 0;
   margin: 0;
   list-style-type: none;
