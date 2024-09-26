@@ -8,6 +8,12 @@ body {
   padding-top: 90px; /* Same height as the header */
 }
 
+* {
+  box-sizing: border-box;
+}
+
+
+/* HEADER AND FOOTER */
 .header {
   height: 90px;
   background: #001E60;
@@ -40,12 +46,32 @@ body {
 
 .social img.icon {
   max-height: 35px; /* Adjust social media icon size */
-  transition: transform 0.3s ease; /* Optional hover effect */
   padding-right: 15px;
 }
 
-.social img.icon:hover {
+img.icon:hover, img.contact-icon:hover {
   transform: scale(1.1); /* Slight zoom effect on hover */
+  transition: transform 0.3s ease; /* Optional hover effect */
+}
+
+.footer {
+  height: 115px;
+  background: #001E60;
+  color: #ED9B33;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/* END OF HEADER AND FOOTER */
+
+/* BODY */
+
+#main-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-evenly;
 }
 
 
@@ -55,18 +81,13 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  
 }
 
 .container-contact {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-
-
 }
-
 
 .contact {
   display: flex;                  /* Use Flexbox */
@@ -83,52 +104,83 @@ body {
 .header-text {
   font-size: 24px;
   font-weight: bold;
-  padding: 15px 15px 5px 15px;
+  padding: 15px 25px 5px 25px;
   color: #ED9B33;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Shadow */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); Shadow
 }
 
 .secondary-text {
   font-size: 16px;
   padding: 10px 48px;
   color: #001E60;
+}
 
+
+
+.container-servicios {
+  position: relative; /* Establishes positioning context for the pseudo-element */
+  z-index: 1; /* Ensures the content appears above the pseudo-element */
+}
+
+.container-servicios::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('resources/drone-background.png');
+  background-repeat: no-repeat;
+  background-position: right 50%; /* Centers vertically, aligns to the right */
+  background-size: 800px auto; /* Sets the background size */
+  opacity: 0.6; /* Adjust the transparency level as needed */
+  z-index: -1; /* Puts the pseudo-element behind the content */
+  pointer-events: none; /* Prevents interference with content interactions */
+}
+
+/* Responsive adjustment for smaller screens */
+@media (max-width: 800px) {
+  .container-servicios::before {
+    background-size: 415px auto; /* Adjusts size for smaller screens */
+  }
 }
 
 
 
 
 
-.footer {
-  height: 115px;
-  background: #001E60;
-  color: #ED9B33;
+.first-level {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  list-style-type: none; /* Removes bullets from the first level */
+  padding: 0 15px 5px 15px;            /* Removes default padding */
+  margin: 0;             /* Removes default margin */
+  text-shadow: 0 0 4px rgba(255, 255, 255, 1); Shadow
 }
 
-element.style {
-  margin-top: 8px;
-  margin-bottom: 0px;
-}
-
-
-
-#main-container {
+.second-level {
   display: flex;
   flex-direction: column;
-  flex: 1;
-
-  /* padding: 48px; */
-  gap: 32px;
+  list-style-type: disc; /* Adds bullets to the second level */
+  padding-left: 20px;    /* Adds indentation for the nested bullets */
+  padding-top: 5px;
 }
 
-.container {
-
+li {
+  margin: 5px;   /* Optional: Adds spacing between main items */
 }
 
+
+
+
+.container-multimedia {
+  background-image: url('resources/contourns-background.svg'); /* Change to .png or .jpg if used */
+  background-size: cover; /* Adjusts the image to cover the entire background */
+  background-repeat: no-repeat; /* Prevents the background from repeating */
+  background-position: center; /* Centers the background image */
+
+}
+/* 
 .container-quotes {
   background: #E5E7EB;
   font-size: 36px;
@@ -141,7 +193,10 @@ element.style {
   font-size: 24px;
   font-weight: bold;
   font-style:normal;
-}
+} */
+
+
+
 
 
 .card {
@@ -152,13 +207,7 @@ element.style {
   padding: 16px;
 }
 
-ul {
-  display: flex;
-  padding: 0;
-  margin: 0;
-  list-style-type: none;
-  gap: 16px;
-}
+
 
 a {
   text-decoration: none;
