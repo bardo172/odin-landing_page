@@ -73,8 +73,6 @@ img.icon:hover, img.contact-icon:hover {
   justify-content: space-evenly;
 }
 
-
-
 .container-call_to_action {
   background-color: #676E97; /* Sets the background color to blue */
   display: flex;
@@ -159,29 +157,46 @@ img.icon:hover, img.contact-icon:hover {
   padding-top: 5px;
 }
 
-li {
-  margin: 5px;   /* Optional: Adds spacing between main items */
-}
-
-
 .container-multimedia {
-  background-image: url('resources/contourns-background.svg'); /* Change to .png or .jpg if used */
-  background-size: cover; /* Adjusts the image to cover the entire background */
-  background-repeat: no-repeat; /* Prevents the background from repeating */
-  background-position: center; /* Centers the background image */
-
+  position: relative; /* Establishes positioning context for the pseudo-element */
+  z-index: 1; /* Ensures the content appears above the pseudo-element */
 }
 
-.video-container {
+.container-multimedia::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('resources/contourns-background.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; /* Sets the background size */
+  opacity: 0.67; /* Adjust the transparency level as needed */
+  z-index: -1; /* Puts the pseudo-element behind the content */
+  pointer-events: none; /* Prevents interference with content interactions */
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  padding: 0 15px 5px;
+}
+
+.video-container, .image-container {
   position: relative;
-  width: 100%; /* The container will take the full width of its parent */
-  max-width: 720px; /* Optional: limit the maximum width */
-  margin: 20px auto; /* Centers the video within its container and adds some space */
+  width: 100%;        /* The container will take the full width of its parent */
+  max-width: 720px;   /* Limit the maximum width to 720px */
+  max-height: 720px;  /* Limit the maximum height to 720px */
+  margin: 20px auto;  /* Centers the container within its parent and adds vertical spacing */
+  overflow: hidden;   /* Ensures no overflow of content */
+}
+.video-container {
   aspect-ratio: 16 / 9; /* Maintains the 16:9 ratio */
-  overflow: hidden; /* Ensures no overflow of video */
 }
 
-.video-container iframe {
+.video-container iframe, .image-container iframe {
   position: absolute;
   top: 0;
   left: 0;
@@ -190,7 +205,13 @@ li {
   border: none; /* Removes the border around the video */
 }
 
-.video-toggle {
+.content-container {
+  display: flex;
+  flex-wrap:wrap;
+}
+
+.toggle {
+  width: 244px; /* Fix button Size */
   cursor: pointer; /* Change cursor to pointer to indicate it's clickable */
   color: white; /* Change text color to white */
   background-color: #001E60; /* Button background color */
@@ -201,49 +222,24 @@ li {
   display: inline-block; /* Allow padding and dimensions */
   font-size: 18px; /* Increase font size */
   transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition for hover effects */
+  
 }
 
-.video-toggle:hover {
+.toggle:hover {
   background-color: #d49329; /* Darker shade on hover */
   transform: scale(1.05); /* Slightly enlarge on hover */
 }
 
-
-
-
-
-/* 
-.container-quotes {
-  background: #E5E7EB;
-  font-size: 36px;
-  font-style: italic;
-  color: #1F2937;
-
+.button {
+  text-align: center; /* Center the button horizontally */
 }
-
-.quote-text {
-  font-size: 24px;
-  font-weight: bold;
-  font-style:normal;
-} */
-
-
-
-
-
-.card {
-  border: 1px solid #eee;
-  box-shadow: 2px 4px 16px rgba(0,0,0,.06);
-  border-radius: 4px;
-  max-width: 760px;
-  padding: 16px;
-
-}
-
-
 
 a {
   text-decoration: none;
   color: white;
   font-size: 24px;
+}
+
+li {
+  margin: 5px;   /* Optional: Adds spacing between main items */
 }
