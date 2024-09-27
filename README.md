@@ -6,11 +6,11 @@
 - [Link to the Assignment](https://www.theodinproject.com/lessons/foundations-landing-page)
 
 ## About
-This project is to practice HTML and CSS, using flex to make a landing page.
+This project is to practice HTML and CSS, using Flex to make a landing page.
 It was made during the foundations course of [The Odin Project](https://www.theodinproject.com).
 
 ## Content
-I took advantage of this proyect to make my own web page for the presentation of my professional services, some content, and contact info.
+I took advantage of this project to make my own web page for the presentation of my professional services, some content, and contact info.
 I am currently not using this brand or line of work too much but it is good to do a project with real info/data. (even if it took and extra day of hard work).
 
 ## Screenshots
