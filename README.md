@@ -14,5 +14,7 @@ I took advantage of this proyect to make my own web page for the presentation of
 I am currently not using this brand or line of work too much but it is good to do a project with real info/data. (even if it took and extra day of hard work).
 
 ## Screenshots
+### Desktop Version
 ![Desktop Version](https://github.com/bardo172/odin-landing_page/blob/main/screenshot-desktop.png?raw=true)
+### Mobile Version
 ![Mobile Version](https://github.com/bardo172/odin-landing_page/blob/main/screenshot-mobile.png.png?raw=true)
